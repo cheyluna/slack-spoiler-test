@@ -1,10 +1,18 @@
 <?php
 
-$message = $_POST['text'];
-$token = $_POST['token'];
+header('Content-Type: application/json');
 
-if ($token != 'gMqc5K9y9r3UJOO3hca0QLhm') {
-    $msg = "The token for the slash command doesn't match. Check your script.";
-    die($msg);
-    echo $msg;
+$post = $_POST;
+
+if ($post['token'] != 'gMqc5K9y9r3UJOO3hca0QLhm') {
+    $err_msg = "The token for the slash command doesn't match. Check your script.";
+    echo $err_msg;
 }
+
+$response = [
+    'response_type' => 'in_channel',
+    'username' => $post['user_name'],
+    'text' => $post['text'],
+];
+
+echo json_encode($response);
