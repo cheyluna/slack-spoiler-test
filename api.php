@@ -3,8 +3,7 @@
 namespace Spoiler;
 
 require('vendor/autoload.php');
-
-use Spoiler\Spoiler;
+require('src/Spoiler/spoiler.php');
 
 $spoiler = new Spoiler();
 
