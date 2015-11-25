@@ -1,4 +1,7 @@
 {
+    "autoload": {
+      "psr-4": {"Spoiler\\": "src/Spoiler"}
+    },
     "require": {
         "guzzlehttp/guzzle": "~6.1"
     }
