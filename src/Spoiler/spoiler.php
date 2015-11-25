@@ -4,7 +4,7 @@ namespace Spoiler;
 
 class Spoiler
 {
-    public $app_dir = 'slack-spoler-test';
+    public $app_dir = 'slack-spoiler-test';
 
     public $config_name = 'config.php';
     
