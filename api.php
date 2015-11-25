@@ -3,7 +3,9 @@
 namespace Spoiler;
 
 require('vendor/autoload.php');
+require('src/Spoiler/api.php');
 require('src/Spoiler/spoiler.php');
+require('src/Spoiler/request.php');
 
 $spoiler = new Spoiler();
 
@@ -14,7 +16,7 @@ if ($spoiler->hasConfigErrors()) {
     $errors = $spoiler->getConfigErrors();
 
     foreach ($errors as $error) {
-        echo $error . '\n';
+        echo $error . ' ';
     }
 } else {
     $post = $_POST;

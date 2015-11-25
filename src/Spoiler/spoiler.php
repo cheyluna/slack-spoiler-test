@@ -4,6 +4,8 @@ namespace Spoiler;
 
 class Spoiler
 {
+    public $app_dir = 'slack-spoler-test';
+
     public $config_name = 'config.php';
     
     public $config_path = '';
@@ -19,7 +21,7 @@ class Spoiler
     public function loadConfig()
     {
         if ($this->hasConfig()) {
-            $this->config_path = $_SERVER['DOCUMENT_ROOT'] . "/" . $this->config_name;
+            $this->config_path = $_SERVER['DOCUMENT_ROOT'] . "/" . $this->app_dir . "/" . $this->config_name;
             require_once($this->config_path);
 
             return true;
@@ -30,7 +32,7 @@ class Spoiler
 
     private function hasConfig()
     {
-        return file_exists($_SERVER['DOCUMENT_ROOT'] . "/" . $this->config_name);
+        return file_exists($_SERVER['DOCUMENT_ROOT'] . "/" . $this->app_dir . "/" . $this->config_name);
     }
     
     public function setupConfigVars()
