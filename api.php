@@ -2,7 +2,9 @@
 
 namespace Spoiler;
 
-require($_SERVER['DOCUMENT_ROOT'] . "/vendor/autoload.php");
+require('vendor/autoload.php');
+
+use Spoiler\Spoiler;
 
 $spoiler = new Spoiler();
 
